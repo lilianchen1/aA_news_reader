@@ -1,6 +1,7 @@
 class Api::FeedsController < ApplicationController
   def index
-    render :json => Feed.all
+    @feeds = Feed.all
+    @current_user = current_user
   end
 
   def show
@@ -20,6 +21,15 @@ class Api::FeedsController < ApplicationController
     feed = Feed.find(params[:id])
     feed.destroy
     render :json => feed
+  end
+
+  def favorite
+    if favorite = UserFeed.find_by(user: current_user, feed_id: params[:id])
+      favorite.destroy
+    else
+      UserFeed.create(user: current_user, feed_id: params[:id])
+    end
+    render json: Feed.all
   end
 
   private

@@ -2,7 +2,8 @@ require 'open-uri'
 
 class Feed < ActiveRecord::Base
   has_many :entries, :dependent => :destroy
-  has_many :users, through: :user_feeds
+  has_many :user_feeds
+  has_many :users, through: :user_feeds, source: :user
 
   def self.find_or_create_by_url(url)
     feed = Feed.find_by_url(url)
@@ -26,6 +27,10 @@ class Feed < ActiveRecord::Base
       reload
     end
     entries
+  end
+
+  def favorited_by_user(user)
+    self.users.include?(user)
   end
 
   def reload
