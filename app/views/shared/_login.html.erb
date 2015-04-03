@@ -1,0 +1,6 @@
+<form class="login" action="<%= creating ? users_url : session_url  %>" method="post">
+  <%= render "shared/authenticity" %>
+  <label>Username<input type="text" name="user[username]"></label>
+  <label>Password<input type="password" name="user[password]"></label>
+  <input type="submit" value="Go!">
+</form>
