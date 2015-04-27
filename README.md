@@ -12,8 +12,8 @@ This project is built on top of a provided skeleton. Skeleton contained backend 
 6. User authentication is implemented so that users must sign up/log in to view feed/entries.
 
 #### To run the program
-1. `rake db:create`
-2. `rake db:migrate`
+1. `>> rake db:create`
+2. `>> rake db:migrate`
 3.  `>> rails server`
 4. go to `localhost:3000`
 
