@@ -14,6 +14,6 @@ This project is built on top of a provided skeleton. Skeleton contained backend 
 1. `>> rails server`
 2. go to `localhost:3000`
 
-Note: if running rails 4, generate secret key value. Refer to [this entry] on stack overflow.
+Note: if running rails 4, generate secret key value. Refer to [this entry] on stack overflow. Postgres must be running on your local machine.
 
 [this entry]: http://stackoverflow.com/questions/22268669/deprecation-warning-you-didnt-set-config-secret-key-base
